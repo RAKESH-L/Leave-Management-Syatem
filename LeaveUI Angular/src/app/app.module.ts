@@ -1,9 +1,7 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
@@ -12,6 +10,10 @@ import { ApplyLeaveComponent } from './components/apply-leave/apply-leave.compon
 import { ApproveDenyComponent } from './components/approve-deny/approve-deny.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { StatusComponent } from './components/status/status.component';
+import { DatePipe } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,10 @@ import { StatusComponent } from './components/status/status.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

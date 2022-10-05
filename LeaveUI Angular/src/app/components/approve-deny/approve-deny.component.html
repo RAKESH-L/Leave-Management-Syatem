@@ -30,7 +30,7 @@
             <td>{{s.leaveReason}}</td>
      <td>
          <span class="action_btn">
-             <a routerLink="/booking-confirmation" (click)="approveRequest(s.id)">Approve</a>
+             <a  (click)="approveRequest(s.id, s.employeeId)">Approve</a>
              <!-- (click)="bookFlight(f.id)" -->
              <a routerLink="/booking-confirmation" (click)="denyRequest(s.id)">Deny</a>
         </span>

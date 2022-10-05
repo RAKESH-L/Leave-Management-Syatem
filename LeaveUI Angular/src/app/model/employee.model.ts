@@ -1,5 +1,5 @@
 export class Employee{
     id?: number;
-    name: string;
-    leaveBalance: string;
+    name?: string;
+    leaveBalance?: number;
 }

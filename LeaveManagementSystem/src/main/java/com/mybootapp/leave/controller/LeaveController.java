@@ -78,5 +78,19 @@ public class LeaveController {
 		
 		return employeeStatusRepository.save(oldStatus);
 	}
+	@PostMapping("update/employee/{eid}")
+	public Employee updateEmployeeById(@PathVariable("eid") Long eid,
+									@RequestBody Employee newEmployee) {
+		Optional<Employee> optional = employeeRepository.findById(eid);
+		
+		if(!optional.isPresent())
+			throw new RuntimeException("ID is Invalid");
+		
+		Employee oldEmployee = optional.get();
+		
+		oldEmployee.setLeaveBalance(newEmployee.getLeaveBalance());
+		
+		return employeeRepository.save(oldEmployee);
+	}
 	
 }

@@ -12,6 +12,7 @@ import { LibraryService } from 'src/app/service/library.service';
 export class HomeComponent implements OnInit {
 
   employeeArray: Employee;
+  id: string;
   constructor(private libraryService: LibraryService, private router:Router) { }
 
   ngOnInit(): void {

@@ -42,5 +42,8 @@ export class LibraryService {
   DeniedRequest(id: string, request: DataRequest): Observable<DataRequest> {
     return this.http.post<DataRequest>('http://localhost:1400/update/employee/status/' + id, request);
   }
+  updateEmployee(id: number, update: Employee): Observable<Employee> {
+    return this.http.post<Employee>('http://localhost:1400/update/employee/' + id, update);
+  }
 
 }
